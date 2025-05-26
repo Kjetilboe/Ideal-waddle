@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #388E3C; /* Soccer field green */
+    margin: 0;
+}
+
+.container {
+    background-color: #f0f0f0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 1000px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.name-inputs {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 10px;
+    padding: 0 20px; /* Add some padding */
+}
+
+.name-inputs h2 {
+    grid-column: 1 / -1; /* Make heading span all columns */
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.name-inputs input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+    width: 100%; /* Ensure inputs take full width of their grid cell */
+    box-sizing: border-box; /* Include padding/border in element's total width */
+}
+
+
+.race-track {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    background-color: #4CAF50; /* Slightly different green for the track */
+    border: 5px dashed white; /* Field lines */
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribute marbles vertically */
+    padding: 10px 0;
+}
+
+.marble-lane {
+    width: 100%;
+    height: calc(100% / 10 - 5px); /* 10 lanes, with some spacing */
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5); /* Lane dividers */
+}
+
+.marble-lane:last-child {
+    border-bottom: none;
+}
+
+.marble {
+    width: 60px; /* Increased size to fit name */
+    height: 60px; /* Increased size to fit name */
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.7em; /* Adjusted font size */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    /* If you have a soccer_ball.png image, uncomment the next line: */
+    /* background-image: url('soccer_ball.png'); */
+    background-size: cover;
+    background-position: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    transition: left 0.05s linear; /* Smooth movement */
+    overflow: hidden; /* Hide overflow if names are too long */
+    text-align: center; /* Center the text */
+
+}
+
+.marble-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
+    max-width: 100%; /* Ensure the span doesn't exceed marble width */
+    display: inline-block; /* Required for max-width and overflow properties to work */
+}
+
+.controls button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
+
+.scoreboard {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.scoreboard h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#resultsList {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#resultsList li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#resultsList li:last-child {
+    border-bottom: none;
+}
+
+#resultsList li.winner {
+    font-weight: bold;
+    color: #28A745; /* Green for winner */
+    font-size: 1.1em;
+}
+
+#resultsList li span:first-child {
+    flex-grow: 1;
+    text-align: left;
+}
+#resultsList li span:last-child {
+    text-align: right;
+    width: 60px; /* To align times nicely */
+}
+
+
